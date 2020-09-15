@@ -1,0 +1,50 @@
+﻿@model ExamenAlvaco.Models.Departamento
+
+@{
+    ViewBag.Title = "Detalles del Departamento";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalles de Departamento</title>
+</head>
+<body>
+    <div>
+        <h4>Departamento</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Descripcion)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Activo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Activo)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Regresar ala lista", "Index")
+    </p>
+</body>
+</html>

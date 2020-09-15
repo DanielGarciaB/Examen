@@ -1,0 +1,57 @@
+﻿@model ExamenAlvaco.Models.Empleado
+
+@{
+    ViewBag.Title = "Detalles Empleado";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Empleado</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Apellidos)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Apellidos)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FechaNcimiento)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FechaNcimiento)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DepartamentoID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DepartamentoID)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Regresar ala Lista", "Index")
+    </p>
+</body>
+</html>

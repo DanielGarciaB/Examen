@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ExamenAlvaco.Models.Empleado>
+
+@{
+    ViewBag.Title = "Empleados";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Crear nuevo ", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellidos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaNcimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartamentoID)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellidos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaNcimiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartamentoID)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Borrar", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

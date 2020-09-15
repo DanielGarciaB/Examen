@@ -1,0 +1,64 @@
+﻿@model ExamenAlvaco.Models.Telefono
+
+@{
+    ViewBag.Title = "Borrar";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Borrar Registro?</h3>
+    <div>
+        <h4>Telefono</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Numero)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Numero)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Lada)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Lada)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Extension)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Extension)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EmpleadoID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EmpleadoID)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Borrar" class="btn btn-default" /> |
+                @Html.ActionLink("Regresar ala lista", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>
